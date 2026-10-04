@@ -1,0 +1,188 @@
+# Oh-My-Posh configuration
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+
+version = 4
+
+enable_cursor_positioning = true
+final_space = true
+
+
+[palette]
+# Background
+error-background = '#ed2939'
+exec-time-background = '#ffffff'
+git-clean-background = '#1cac78'
+git-dirty-background = '#ffae42'
+path-background = '#91ddff'
+pyenv-background = '#03c03c'
+rust-background = '#ffa500'
+separator-background = '#9966cc'
+session-background = '#90EE90'
+shell-background = '#702963'
+time-background = '#9f79ee'
+
+# Foreground
+base-foreground = '#100e23'
+
+# Raw colors
+pure-red = '#ff0000'
+pure-white = '#ffffff'
+
+
+[upgrade]
+auto = false
+notice = true
+
+
+[var]
+BaseGitBranches = 'main master develop'
+DefaultErrorMsg = 'ERROR'
+DefaultPythonVersion = '3.14'
+DefaultShell = 'zsh'
+
+
+# Define blocks and segments
+#
+# Legend:
+#  - ? not always displayed
+#  - * experimental
+#
+# On the left
+# | status | shell | session* | path | git? |
+#
+# On the right
+# | dev-env? (python/rust/unity) | time | executiontime? |
+
+# Left block
+[[blocks]]
+alignment = 'left'
+newline = true
+type = 'prompt'
+
+[[blocks.segments]]
+  background = 'p:error-background'
+  foreground = 'p:base-foreground'
+  invert_powerline = true
+  powerline_symbol = ''
+  style = 'powerline'
+  templates = ['  ', '{{ if ne .Var.DefaultErrorMsg (reason .Code)}}{{ reason .Code }} {{ end }}']
+  type = 'status'
+
+[[blocks.segments]]
+  background = 'p:shell-background'
+  foreground = 'p:base-foreground'
+  style = 'powerline'
+  type = 'shell'
+
+[[blocks.segments]]
+  background = 'p:session-background'
+  foreground = 'p:base-foreground'
+  style = 'powerline'
+  template = '{{ if .SSHSession }} {{ end }} {{ .UserName }} '
+  type = 'session'
+
+[[blocks.segments]]
+  background = 'p:path-background'
+  foreground = 'p:base-foreground'
+  powerline_symbol = ''
+  style = 'powerline'
+  type = 'path'
+
+  [blocks.segments.options]
+  folder_icon = ''
+  max_depth = 5
+  style = 'agnoster_short'
+
+[[blocks.segments]]
+  background = 'p:git-clean-background'
+  background_templates = ['{{ if or (.Working.Changed) (.Staging.Changed) }}p:git-dirty-background{{ end }}']
+  foreground = 'p:base-foreground'
+  powerline_symbol = ''
+  style = 'accordion'
+  # Add link to the HEAD webpage
+  template = ' {{ $remote_branch_tag := list .UpstreamURL "/-/tree/" .Ref | join ""}}{{ $remote_commit := list .UpstreamURL "/-/commit/" .Commit.Sha | join ""}}{{ if has .Ref (splitList " " .Var.BaseGitBranches) }}{{ url .UpstreamIcon .UpstreamURL }}{{ else if .Detached }}{{ url .UpstreamIcon $remote_commit }}{{ else }}{{ url .UpstreamIcon $remote_branch_tag }}{{ end }}{{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }} {{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }}|{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }} {{ end }}'
+  type = 'git'
+
+  [blocks.segments.options]
+  branch_gone_icon = '≢ '
+  branch_icon = ' '
+  branch_identical_icon = '≡ '
+  fetch_status = true
+  fetch_upstream_icon = true
+  source = 'cli'
+  tag_icon = ' '
+
+  [blocks.segments.options.mapped_branches]
+  'feature/*' = '🚀/'
+  'fix/*' = '🐛/'
+  'hotfix/*' = '🚨/'
+
+  [blocks.segments.options.untracked_modes]
+  '/Users/user/Projects/oh-my-posh/' = 'no'
+
+
+# Right block
+[[blocks]]
+alignment = 'right'
+type = 'rprompt'
+
+[[blocks.segments]]
+  background = 'p:pyenv-background'
+  foreground = 'p:base-foreground'
+  powerline_symbol = ''
+  style = 'powerline'
+  # TODO: work with python package manager env. variable
+  # TODO: add link to release notes ?
+  templates = [
+    '  {{ .Venv }} ',
+    '{{ if not (hasPrefix .Var.DefaultPythonVersion .Full) }}<b>{{ .Full }}</b> {{ end }}',
+    '{{ if .Env.UV_ACTIVE }}(uv) {{ end }}',
+  ]
+  type = 'python'
+
+[[blocks.segments]]
+  background = 'p:rust-background'
+  foreground = 'p:base-foreground'
+  powerline_symbol = ''
+  style = 'powerline'
+  type = 'rust'
+
+[[blocks.segments]]
+  # background = 'p:unity-background'
+  foreground = 'p:base-foreground'
+  powerline_symbol = ''
+  style = 'powerline'
+  type = 'unity'
+
+  [blocks.segments.options]
+  http_timeout = 2000
+
+[[blocks.segments]]  # Separator
+  powerline_symbol = ''
+  background = 'transparent'
+  type = 'text'
+  style = 'accordion'
+
+[[blocks.segments]]
+  background = 'p:time-background'
+  foreground = 'p:base-foreground'
+  style = 'diamond'
+  template = ' {{ .CurrentDate | date .Format }} '
+  trailing_diamond = ''
+  type = 'time'
+
+  [blocks.segments.options]
+  time_format = '15:04'
+
+[[blocks.segments]]
+  leading_diamond = ''
+  trailing_diamond = ''
+  foreground = 'p:base-foreground'
+  background = 'p:exec-time-background'
+  type = 'executiontime'
+  style = 'diamond'
+
+  [blocks.segments.options]
+  style = 'austin'
+  threshold = 10000
+
