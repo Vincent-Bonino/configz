@@ -1,0 +1,24 @@
+{
+    "disabled_menuitem_copy_dir_path": true,
+    "disabled_menuitem_copy_name": false,
+    "disabled_menuitem_copy_path": false,
+    "disabled_menuitem_copy_path_windows": true,
+    "disabled_menuitem_edit": false,
+    "disabled_menuitem_edit_to_right": false,
+    "disabled_menuitem_empty": true,
+    "disabled_menuitem_find_in_project": false,
+    "disabled_menuitem_folder_close": true,
+    "disabled_menuitem_folder_save": true,
+    "disabled_menuitem_open_in_browser": true,
+    "disabled_menuitem_open_in_new_window": false,
+    "disabled_menuitem_open_run": true,
+    "disabled_menuitem_paste_in_parent": false,
+
+    "hide_open_with_entries_when_there_are_no_applicable": true,
+
+    "statusbar_file_size": false,
+    "statusbar_modified_time": true,
+    "statusbar_modified_time_format": "Last edited on: %A %d %b %Y - %H:%M ",
+
+    "i_donated_to_sidebar_enhancements_developer": true
+}

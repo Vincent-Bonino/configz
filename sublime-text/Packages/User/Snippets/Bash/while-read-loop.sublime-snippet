@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+while read -r ${2:var}; do
+    $0
+done < <(${1:input_cmd})
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>whileread</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.shell.bash</scope>
+    <!-- Optional: Set a description to explain the goal of the snippet -->
+    <description>While read iteration</description>
+</snippet>

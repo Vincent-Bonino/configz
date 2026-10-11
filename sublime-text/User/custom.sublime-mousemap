@@ -1,0 +1,4 @@
+[
+    { "button": "button1", "modifiers": ["ctrl"], "command": "goto_definition" },
+]
+

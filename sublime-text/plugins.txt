@@ -1,0 +1,8 @@
+A File Icon
+Crontab
+Dockerfile Syntax Highlighting
+Indent XML
+Origami
+requirementstxt
+SideBarEnhancements
+TOML

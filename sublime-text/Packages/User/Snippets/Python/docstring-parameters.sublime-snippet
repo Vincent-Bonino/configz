@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+Parameters
+----------
+$0
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>Parameters</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python comment.block.documentation.python</scope>
+    <!-- Optional: Set a description to explain the goal of the snippet -->
+    <description>Parameters docstring</description>
+</snippet>

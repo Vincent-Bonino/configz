@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+Returns
+-------
+$0
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>Returns</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python comment.block.documentation.python</scope>
+    <!-- Optional: Set a description to explain the goal of the snippet -->
+    <description>Returns docstring</description>
+</snippet>

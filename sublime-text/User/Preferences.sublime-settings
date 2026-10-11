@@ -1,0 +1,203 @@
+// Place your settings in the file "Packages/User/Preferences.sublime-settings",
+// which overrides the settings in here.
+//
+// Settings may also be placed in syntax-specific setting files, for
+// example, in Packages/User/Python.sublime-settings for python files.
+{
+    // Sets the colors used within the text area.
+    // The value "auto" will switch between the "light_color_scheme" and
+    // "dark_color_scheme" based on the operating system appearance.
+    "color_scheme": "Mariana.sublime-color-scheme",  // Default dark color scheme
+
+    // Note that the font_face and font_size are overridden in the platform
+    // specific settings file, for example, "Preferences (Linux).sublime-settings".
+    // Because of this, setting them here will have no effect: you must set them
+    // in your User File Preferences.
+    "font_face": "",
+    "font_size": 10,
+    // The font size set when using "Reset Size"
+    "default_font_size": 10,
+
+    // Set to false to prevent line numbers being drawn in the gutter
+    "line_numbers": true,
+
+    // Columns in which to display vertical rulers. Each entry may also be a
+    // list of the column, the ruler style and optionally the ruler width, for
+    // example: [[80, "solid", 2], 78, [90, "dotted"]]
+    "rulers": [120],
+
+    // Controls how ruler lines are drawn
+    // - "dotted": Drawn as a dotted line
+    // - "stippled": Drawn as a stippled line
+    // - "solid": Drawn as a solid line
+    "ruler_style": "dotted",
+
+    // The number of spaces a tab is considered equal to
+    "tab_size": 4,
+
+    // Set to true to insert spaces when tab is pressed
+    "translate_tabs_to_spaces": true,
+
+    // Controls how the indent guides are drawn. Options may be combined, with
+    // valid options being:
+    //  - "draw_normal" - will draw plain indent guides for every indentation
+    //    group
+    //  - "draw_active" - will draw indent guides for the group
+    //    containing the caret in a different color
+    //  - "draw_active_single" - will draw the right-most indent guide in the
+    //    group containing the caret in a different color
+    //  - "solid" - can be combined with any of the draw_* options to draw
+    //    solid instead of stippled lines
+    "indent_guide_options": ["draw_normal", "draw_active_single"],
+
+    // Controls where trailing white space is removed on save.
+    // - "none": Do not remove any trailing white space on save.
+    // - "all": Remove all trailing white space on save.
+    // - "not_on_caret": Only remove white space that won't affect the caret.
+    //                   When used in conjunction with "save_on_focus_lost" and
+    //                   certain desktop environments that frequently make the
+    //                   application lose focus this avoids the caret jumping
+    //                   around a lot.
+    "trim_trailing_white_space_on_save": "none",
+
+    // Only trim white space on save for the parts of a file that have been
+    // modified by you. If there is trailing white space in other parts of the
+    // file they are left alone.
+    "trim_only_modified_white_space": true,
+
+    // Set to true to ensure the last line of the file ends in a newline
+    // character when saving
+    "ensure_newline_at_eof_on_save": true,
+
+    // By default, auto complete will commit the current completion on enter.
+    // This setting can be used to make it complete on tab instead.
+    // Completing on tab is generally a superior option, as it removes
+    // ambiguity between committing the completion and inserting a newline.
+    "auto_complete_commit_on_tab": false,
+
+    // Controls what happens when pressing the up key while the first item in
+    // the auto complete window is selected: if false, the window is hidden,
+    // otherwise the last item in the window is selected. Likewise for the
+    // down key when the last item is selected.
+    "auto_complete_cycle": true,
+
+    // Add trailing symbols (e.g., '.', '()') if the auto complete engine
+    // thinks they're likely enough
+    "auto_complete_trailing_symbols": true,
+
+    // Add a space after completions if the auto complete engine thinks
+    // they're likely enough
+    "auto_complete_trailing_spaces": true,
+
+    // Snippets will not be included in the auto complete when this is
+    // false. They can still be triggered by typing their tab trigger in, and
+    // pressing tab when auto complete is not showing.
+    "auto_complete_include_snippets": true,
+
+    // When this is set to false, snippets won't be present in the auto
+    // complete dialog when typing, instead they'll only be shown in the auto
+    // complete dialog when it's explicitly triggered
+    "auto_complete_include_snippets_when_typing": true,
+
+    // By default, shift+tab will only unindent if the selection spans
+    // multiple lines. When pressing shift+tab at other times, it'll insert a
+    // tab character - this allows tabs to be inserted when tab_completion is
+    // enabled. Set this to true to make shift+tab always unindent, instead of
+    // inserting tabs.
+    "shift_tab_unindent": true,
+
+    // If true, the copy and cut commands will operate on the current line
+    // when the selection is empty, rather than doing nothing.
+    "copy_with_empty_selection": true,
+
+    // When drag_text is enabled, clicking on selected text will begin a
+    // drag-drop operation.
+    "drag_text": false,
+
+
+    //
+    // User Interface Settings
+    //
+
+    // The theme controls the look of Sublime Text's UI (buttons, tabs, scroll
+    // bars, etc)
+    // The value "auto" will switch between the "light_theme" and "dark_theme"
+    // based on the operating system appearance.
+    "theme": "auto",
+
+    // Show folders in the side bar in bold
+    "bold_folder_labels": false,
+
+    // Hides the buttons for scrolling tabs left/right, requiring use of a
+    // trackpad or mouse scroll wheel
+    "hide_tab_scrolling_buttons": true,
+
+    // Display the git status in the status bar, requires the show_git_status
+    // setting to be enabled
+    "show_git_status_in_status_bar": true,
+
+    // Display file encoding in the status bar
+    "show_encoding": true,
+
+    // Display line endings in the status bar
+    "show_line_endings": true,
+
+    // Display indentation in the status bar
+    "show_indentation": true,
+
+    // Display syntax in the status bar
+    "show_syntax": true,
+
+    // Show Line, Column in the status bar in full length, compact or completely
+    // hidden. Valid values are "enabled", "compact" and "disabled"
+    "show_line_column": "enabled",
+
+    // Display misspelled words in the status bar
+    "show_spelling_errors": true,
+
+    // Enables hardware accelerated rendering. This moves rendering to your GPU,
+    // allowing for faster rendering at higher resolutions. Changing this
+    // setting requires an application restart to take effect.
+    // - "none": Performs CPU rendering.
+    // - "opengl": Uses OpenGL for rendering. Minimum required version is 4.1
+    //
+    // On Mac, this value is overridden in the platform specific settings.
+    "hardware_acceleration": "opengl",
+
+
+    //
+    // Application Behavior Settings
+    //
+
+    // remember_layout makes Sublime Text start with the same layout it closed
+    // with. Only applies when hot_exit is disabled.
+    "remember_layout": false,
+
+    // Show the full path to files in the title bar. On Mac, this value is
+    // overridden in the platform specific settings, with a default value of
+    // false.
+    "show_full_path": true,
+
+    // Show the relative path to files in the title bar. This overrides
+    // show_full_path for files that are listed in the sidebar, however
+    // show_full_path is still used for other files.
+    "show_rel_path": true,
+
+    // Show "project - file" or "file - project" in the title bar.
+    "show_project_first": true,
+
+    // File indexing parses all files in the sidebar, and builds an index of
+    // their symbols. This is required for Goto Definition to work.
+    "index_files": true,
+
+    // Sets whether the indexer should exclude files ignored by git.
+    "index_exclude_gitignore": true,
+
+    // index_exclude_patterns indicate which files won't be indexed.
+    "index_exclude_patterns": ["*.log"],
+
+    // relative_line_numbers will draw each line number as the distance from
+    // the current line. Useful in conjunction with Vintage.
+    "relative_line_numbers": false,
+}
+

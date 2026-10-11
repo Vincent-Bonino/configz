@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+logger: logging.Logger = logging.getLogger(__name__)
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>logger:</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+    <!-- Optional: Set a description to explain the goal of the snippet -->
+    <description>Logger definition</description>
+</snippet>

@@ -1,0 +1,61 @@
+{
+    "folders":
+    [
+        // Root folder
+        {
+            "name": "<root>",
+            "path": ".",
+            "index_exclude_patterns": [
+                // Uninteresting folders
+                // Python
+                "**/.venv",
+                // Rust
+                "**/target",
+                // Softwares
+                ".idea/*",
+                // Files
+                "*.css", "*.js", "*.md", "*.log",
+            ],
+            "index_include_patterns": ["*.py"],
+            "folder_exclude_patterns": [
+                // Python
+                "*.egg-info", ".mypy_cache", ".pytest_cache", ".ruff_cache", ".venv", "__pycache__", "build", "dist", "coverage-reports",
+            ],
+            "file_exclude_patterns": [
+                // Python
+                ".coverage", ".python-version", ".envrc", "uv.lock",
+            ],
+        },
+        /* Template
+        {
+            "name": "<project>",
+            "path": "<path>/<project>",
+            "follow_simlinks": true,
+            
+            // Exclude from view
+            "file_exclude_patterns": [".coverage", ".python-version", ".envrc", "uv.lock",],
+            "folder_exclude_patterns": [
+                // Python
+                "build", "dist", "*.egg-info", ".venv", "__pycache__",
+                // Linters & tests
+                "coverage-reports", ".mypy_cache", ".pytest_cache", ".ruff_cache",
+            ],
+            
+            // Exclude from search
+            "index_exclude_patterns": ["*"],
+            "binary_file_patterns": [],
+            
+            // If choosing files is preferred to excluding files
+            // "file_include_patterns": [],
+            // "folder_include_patterns": [],
+            // "index_include_patterns": [],
+        },
+        */
+    ],
+    "settings":
+    {
+        "tab_size": 4,
+        "translate_tabs_to_spaces": true,
+    },
+}
+
