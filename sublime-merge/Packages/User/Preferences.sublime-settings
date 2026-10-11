@@ -1,0 +1,12 @@
+{
+    "always_show_command_status": true,
+    "commit_graph_ordering": "commit_date",
+    "hardware_acceleration": "opengl",
+    "image_diff_style": "onion-skin",
+    "side_bar_layout": "commit_graph_as_column",
+    "signature_error_highlighting": "no_public_key",
+    "theme": "auto",
+    "themed_title_bar": true,
+    "translate_tabs_to_spaces": true,
+}
+
