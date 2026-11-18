@@ -1,0 +1,16 @@
+# -- Enable some optional checks --
+
+# (SC2230) Suggest 'command -v' instead of 'which'
+enable=deprecate-which
+
+# (SC2243) Suggest explicitly using -n in `[ $var ]`
+enable=avoid-nullary-conditions
+
+# (SC2248) Suggest quoting variables without metacharacters
+enable=quote-safe-variables
+
+# (SC2249) Suggest adding a default case in `case` statements
+enable=add-default-case
+
+# (SC2292) Require [[ and warn about [
+enable=required-double-brackets

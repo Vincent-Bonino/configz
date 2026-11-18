@@ -1,0 +1,22 @@
+#! /usr/bin/env zsh
+
+[[ -n $CONFIGZ_DIR ]] || source "$HOME/.zprofile"
+
+# Shell options
+
+# TODO
+
+
+
+# -- Configz --
+_resource_dir() {
+    local dir="$1" file
+
+    for file in "$dir"/**/*.{sh,zsh}(N); do
+        source "$file"
+    done
+}
+
+
+# Finally, generic configurations
+. "$CONFIGZ_DIR/shell/shellrc"

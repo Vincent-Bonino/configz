@@ -1,0 +1,44 @@
+[advice]
+[alias]
+    follow = log --oneline --follow
+[branch]
+    sort = -commiterdate
+[core]
+    compression = 9
+    preloadindex = true
+    ; editor = subl -n -w
+[diff]
+    ; TODO: deeper config
+    external = difft
+    interHunkContext = 10
+    renames = copies
+[http]
+    sslVerify = true
+[init]
+    defaultBranch = main
+[log]
+    abbrevCommit = true
+[maintenance]
+[merge]
+    conflictStyle = zdiff3
+[pull]
+    rebase = true
+[push]
+    autoSetupRemote = true
+    default = current
+[rebase]
+    autoStash = true
+    missingCommitsCheck = warn
+[rerere]
+    enabled = true
+[status]
+    branch = true
+    showStash = true
+    showUntrackedFiles = all
+[tag]
+    sort = -taggerdate
+[url "git@github.com:"]
+    insteadOf = "gh:"
+[user]
+    ; email = <email>
+    ; name = <name>

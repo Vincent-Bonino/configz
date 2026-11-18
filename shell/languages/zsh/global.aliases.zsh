@@ -1,0 +1,2 @@
+alias -g DTS='3>&2 2>&1 1>&3 3>&-'
+alias -g GREP='| rg'

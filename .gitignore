@@ -1,2 +1,6 @@
+# Tmp
+export/
+*.zip
+
 # Keep .gitkeep for structure
 !**/.gitkeep

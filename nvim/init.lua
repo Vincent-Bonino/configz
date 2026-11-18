@@ -43,6 +43,7 @@ vim.pack.add({
     { src = gh('numToStr/Comment.nvim') },
     { src = gh('nvim-lualine/lualine.nvim') },
     { src = gh('nvim-treesitter/nvim-treesitter') },
+    { src = gh('pablos123/shellcheck.nvim') },
     { src = gh('windwp/nvim-autopairs') },
 })
 
@@ -64,6 +65,7 @@ require('plugins.gitsigns') -- TODO configure
 require('plugins.guess-indent')
 require('plugins.lualine')
 require('plugins.render-markdown')
+require('plugins.shellcheck')
 require('plugins.todo-comments')
 require('plugins.treesitter')
 require('plugins.which-key') -- TODO configure

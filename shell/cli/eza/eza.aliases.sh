@@ -1,0 +1,10 @@
+alias eza='eza --color=auto'
+
+alias l='eza -F'
+alias la='eza --all'
+alias lb='eza --long --git --git-repos --mounts --bytes'
+alias lg='eza --long --git --git-ignore --git-repos'
+alias ll='eza --long --git --git-repos --mounts'
+alias lla='eza --long --git --git-repos --mounts --all'
+alias llt='eza --long --sort=modified'
+alias ls='eza'

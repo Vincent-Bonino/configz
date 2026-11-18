@@ -1,0 +1,34 @@
+# Generic shell "rc" file
+
+case "$CONFIGZ_SHELL" in
+    bash)  # From debian's bashrc
+        # If not running interactively, don't do anything
+        case $- in
+            *i*) ;;
+            *) return;;
+        esac
+    ;;
+esac
+
+
+# Function to re-source shell configuration files.
+#
+# Warning: rely on `_resource_dir` being implemented for each shell
+resource() {
+    local shell_configz_dir="$CONFIGZ_DIR/shell"
+    
+    local cfg_dir
+    for cfg_dir in "$shell_configz_dir"/*; do
+        _resource_dir "$cfg_dir"
+    done
+}
+
+
+# OhMyPosh prompt
+if [[ "${NO_OMP:-0}" == 0 && "${DISABLE_OMP:-0}" == 0 ]]; then
+    eval "$(oh-my-posh init "$CONFIGZ_SHELL" --config "$CONFIGZ_DIR/oh-my-posh/theme.toml")"
+fi
+
+
+# Finally, source everything
+resource

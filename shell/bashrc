@@ -1,0 +1,23 @@
+#! /usr/bin/env bash
+
+[[ -n $CONFIGZ_DIR ]] || . "$HOME/.profile"
+
+# Shell options
+shopt -s globstar
+shopt -s nullglob
+
+# TODO
+
+
+# -- Configz --
+_resource_dir() {
+    local dir="$1" file
+
+    for file in "$dir"/**/*.{sh,bash}; do
+        . "$file"
+    done
+}
+
+
+# Finally, generic configurations
+. "$CONFIGZ_DIR/shell/shellrc"
